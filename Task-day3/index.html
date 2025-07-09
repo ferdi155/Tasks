@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=dz, initial-scale=1.0">
+    <title>Form action</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <div class="nav-left">
+                <img src="assets/logo.webp" alt="Logo" class="logo" />
+                <div class="menu-links">
+                    <a href="#" class="link">Home</a>
+                    <a href="#" class="link project">My Project</a>
+                </div>
+            </div>
+            <a href="#" class="contact-btn">Contact Me</a>
+        </div>
+    </header>
+    <main>
+        <div class="form-container">
+            <h1>GET IN TOUCH</h1>
+            <form action="submit" method="post" enctype="multipart/form-data">
+                <label for="name">Nama</label>
+                <input type="text" id="name" name="name" placeholder="Your name" />
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your email" />
+
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Your phone number" />
+
+                <label for="subject">Subject</label>
+                <select id="subject" name="subject">
+                    <option value="">-- Select Subject --</option>
+                    <option value="subject1">Lorem, ipsum.</option>
+                    <option value="subject2">Lorem, ipsum dolor.</option>
+                    <option value="subject3">Lorem ipsum dolor sit.</option>
+                </select>
+
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Type your message here..."></textarea>
+
+                <button type="submit">submit</button>
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>

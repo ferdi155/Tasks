@@ -6,14 +6,14 @@
 }
 
 body {
-  background-color: #e5eaf5;
+  background-color: whitesmoke;
 }
 .navbar {
   display: flex;
-  justify-content: space-between; /* logo + menu kiri, contact kanan */
+  justify-content: space-between; 
   align-items: center;
   padding: 5px 60px;
-  background-color: whitesmoke;
+  background-color: white;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -38,24 +38,32 @@ body {
 .home {
   text-decoration: none;
   color: black;
-  font-weight: 500;
+  font-weight: 700;
+}
+.home:hover {
+  color: grey;
 }
 .project {
   text-decoration: none;
   color: black;
   font-weight: 500;
 }
-.home:hover {
-  color: grey;
-}
-.project   :hover {
+.project:hover {
   color: grey;
 }
 
-a {
-  margin-top: 10px;
+.contact-me{
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  padding: 5px 25px;
+  margin-bottom: 5px;
 }
 
+.contact-me:hover{
+  background-color: gray;
+}
 main {
   display: flex;
   justify-content: center;
@@ -87,7 +95,7 @@ main {
   font-size: 15px;
   line-height: 1.8;
   margin-bottom: 30px;
-  color: #444;
+  color:black;
 }
 
 .buttons {
@@ -180,5 +188,5 @@ main {
 
 .profile-card p {
   font-size: 13px;
-  color: #555;
+  color: grey;
 }
