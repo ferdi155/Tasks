@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add My Project</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <div class="nav-left">
+                <img src="assets/logo.webp" alt="Logo" class="logo" />
+                <div class="menu-links">
+                    <a href="#" class="link">Home</a>
+                    <a href="#" class="link project">My Project</a>
+                </div>
+            </div>
+            <a href="#" class="contact-btn">Contact Me</a>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <div class="container">
+            <div class="form-container">
+                <h1 class="form-title">ADD MY PROJECT</h1>
+
+                <form id="projectForm">
+                    <div class="form-group">
+                        <label for="projectName">Project Name</label>
+                        <input type="text" id="projectName" name="projectName" required />
+                    </div>
+
+                    <div class="date-row">
+                        <div class="form-group">
+                            <label for="startDate">Start Date</label>
+                            <input type="date" id="startDate" name="startDate" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="endDate">End Date</label>
+                            <input type="date" id="endDate" name="endDate" required />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea id="description" name="description" placeholder="Describe your project..."
+                            required></textarea>
+                    </div>
+
+                    <div class="technologies-section">
+                        <label>Technologies</label>
+                        <div class="tech-grid">
+                            <div class="tech-item">
+                                <input type="checkbox" id="nodejs" name="nodejs" value="Node.js" />
+                                <label for="nodejs">Node.js</label>
+                            </div>
+                            <div class="tech-item">
+                                <input type="checkbox" id="nextjs" name="nextjs" value="Next.js" />
+                                <label for="nextjs">Next.js</label>
+                            </div>
+                            <div class="tech-item">
+                                <input type="checkbox" id="reactjs" name="reactjs" value="React.js" />
+                                <label for="reactjs">React.js</label>
+                            </div>
+                            <div class="tech-item">
+                                <input type="checkbox" id="typescript" name="typescript" value="TypeScript" />
+                                <label for="typescript">TypeScript</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <label>Upload Image</label>
+                    <div class="file-upload">
+                        <div class="file-upload-btn">
+                            <span id="fileText">Choose</span>
+                            <input type="file" id="imageUpload" accept="image">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+            <div class="header-card">
+                <h1>MY PROJECT</h1>
+            </div>
+
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image mobile"><img src="" alt=""></div>
+                    <div class="project-content">
+                        <h3 class="project-title">Dunibeunya Mobile App - 2021</h3>
+                        <div class="project-meta">
+                            <span class="project-date">durasi: 3 bulan</span>
+                        </div>
+                        <p class="project-description">
+                            App that used for dunibeunya student, it was developed and can downloaded on playstore.
+                            Happy download
+                        </p>
+                        <div class="project-icons">
+                            <div class="icon"><img src="assets/playstore.png" alt=""></div>
+                            <div class="icon"><img src="assets/android-logo.png" alt=""></div>
+                            <div class="icon"><img src="assets/java.png" alt=""></div>
+                        </div>
+                        <div class="project-actions">
+                            <button class="btn btn-edit">edit</button>
+                            <button class="btn btn-delete">delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+<script src="main.js"></script>
+</body>
+
+</html>

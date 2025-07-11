@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dumbways Web App</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        background: aliceblue;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 30px;
+
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .content {
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    .image img {
+        width: 300px;
+        border-radius: 10px;
+    }
+
+    .details {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .duration i,
+    .tech i {
+        margin-right: 8px;
+        color: #333;
+    }
+
+    .duration p,
+    .tech div {
+        margin: 8px 0;
+        font-size: 14px;
+    }
+
+    .tech .icons {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        gap: 10px;
+    }
+
+    .description {
+        margin-top: 30px;
+        font-size: 14px;
+        line-height: 1.6;
+        color: #444;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1 id="project-title"></h1>
+        <div class="content">
+            <div class="image">
+                <img id="project-image" src="" alt="Project Image" />
+            </div>
+            <div class="details">
+                <div class="duration">
+                    <h3>Duration</h3>
+                    <p id="project-date"><i class="fa-regular fa-calendar"></i></p>
+                    <p id="project-duration"><i class="fa-regular fa-clock"></i></p>
+                </div>
+                <div class="tech">
+                    <h3>Technologies</h3>
+                    <div class="icons" id="project-tech"></div>
+                </div>
+            </div>
+        </div>
+        <div class="description">
+            <p id="project-description"></p>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const idx = sessionStorage.getItem('selectedProjectIdx');
+            const projects = JSON.parse(sessionStorage.getItem('projects') || '[]');
+            const project = projects[idx];
+
+            if (!project) {
+                document.querySelector('.container').innerHTML = '<h2>Project tidak ditemukan.</h2>';
+                return;
+            }
+
+            // pengubahan sususan tanggal
+            function formatDate(dateStr) {
+                const date = new Date(dateStr);
+                return date.toLocaleDateString('id-ID', { day: '2-digit', month: 'short', year: 'numeric' });
+            }
+
+            // durasi bulan
+            const start = new Date(project.startDate);
+            const end = new Date(project.endDate);
+            let months = (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth());
+            if (end.getDate() >= start.getDate()) months += 1;
+            if (months < 1) months = 1;
+
+            document.getElementById('project-title').textContent = project.projectName;
+            document.getElementById('project-image').src = project.imageUrl || '';
+            document.getElementById('project-date').innerHTML = `<i class="fa-regular fa-calendar"></i> ${formatDate(project.startDate)} – ${formatDate(project.endDate)}`;
+            document.getElementById('project-duration').innerHTML = `<i class="fa-regular fa-clock"></i> ${months} month${months > 1 ? 's' : ''}`;
+            document.getElementById('project-description').textContent = project.description;
+
+            // technologies
+            const techIcons = project.technologies.map(tech => `<div>${tech}</div>`).join('');
+            document.getElementById('project-tech').innerHTML = techIcons;
+        });
+    </script>
+</body>
+
+</html>
