@@ -62,9 +62,6 @@ document.addEventListener("DOMContentLoaded", function () {
       if (end.getDate() >= start.getDate()) months += 1;
       if (months < 1) months = 1;
 
-      const techIcons = project.technologies
-        .map((tech) => `<span class="icon">${tech}</span>`)
-        .join(" ");
       projectsGrid.innerHTML += `
                 <div class="project-card">
                     <div class="project-image mobile">
