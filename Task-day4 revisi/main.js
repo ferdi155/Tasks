@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
           technologies,
           imageUrl,
         });
-        sessionStorage.setItem("projects", JSON.stringify(projects)); 
+        sessionStorage.setItem("projects", JSON.stringify(projects));
         alert("Project berhasil disimpan!");
         form.reset();
         renderProjects();
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const projectsGrid = document.querySelector(".projects-grid");
     if (!projectsGrid) return;
 
-    const projects = JSON.parse(sessionStorage.getItem("projects") || "[]"); 
+    const projects = JSON.parse(sessionStorage.getItem("projects") || "[]");
     projectsGrid.innerHTML = "";
 
     projects.forEach((project, idx) => {
