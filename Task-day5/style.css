@@ -1,0 +1,421 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #333;
+}
+
+/* css container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* css navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.logo {
+  height: 40px;
+}
+
+.menu-links a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+
+.link:hover,
+.project:hover {
+  color: grey;
+}
+
+.contact-btn {
+  background-color: black;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-btn:hover {
+  background-color: grey;
+}
+
+/* cs main content */
+.main-content {
+  padding: 60px 0;
+  background-color: whitesmoke;
+}
+
+.form-container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.form-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #555;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  box-shadow: 0 5px 6px rgba(0, 0, 0, 0.2);
+  background-color: #fafafa;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  background-color: white;
+}
+
+.date-row {
+  display: flex;
+  gap: 10px;
+}
+
+.date-row .form-group {
+  flex: 1;
+}
+
+.form-group textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+/* css technologies  */
+.technologies-section {
+  margin-bottom: 25px;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+  margin-top: 12px;
+}
+
+.tech-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tech-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: blue;
+  cursor: pointer;
+  box-shadow: 0 5px 6px rgba(0, 0, 0, 0.2);
+}
+
+.tech-item label {
+  font-weight: 500;
+  color: #666;
+  cursor: pointer;
+}
+
+/* css file upload */
+label {
+  display: flex;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.file-upload {
+  position: relative;
+  margin-bottom: 30px;
+  box-shadow: 0 5px 6px rgba(0, 0, 0, 0.2);
+}
+
+.file-upload-btn {
+  display: flex;
+  align-items: right;
+  justify-content: space-between;
+  width: 20%;
+  padding: 12px 16px;
+  border: 2px;
+  border-radius: 8px;
+  background-color: #fafafa;
+  cursor: pointer;
+  font-size: 16px;
+  color: #888;
+}
+
+.file-upload-btn:hover {
+  background-color: rgba(255, 107, 53, 0.05);
+}
+
+.file-upload-icon {
+  font-size: 18px;
+  transform: rotate(45deg);
+}
+
+.file-upload input[type="file"] {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+/* cs submit button */
+.submit-btn {
+  justify-content: flex-end;
+  background-color: black;
+  color: white;
+  padding: 5px 20px;
+  border-radius: 20px;
+  border: none;
+  margin: 5px 0px 80px 80%;
+  text-align: center;
+  font-weight: 600;
+}
+
+.submit-btn:hover {
+  background-color: #34495e;
+  transform: translateY(-2px);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+/* css projects grid */
+.header-card {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-card {
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 350px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.project-image {
+  width: auto;
+  height: 200px;
+  border-radius: 10px;
+  background-color: grey;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.project-image img{
+  border-radius: 5px;
+  width: 100%;
+  height: 200px;
+}
+
+.project-content {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 2px;
+}
+
+.project-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.project-date {
+  color: black;
+  font-size: 0.9rem;
+}
+
+.project-description {
+  color: black;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.project-icons {
+  display: grid;
+  grid-template-columns: repeat(4, 0fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.icon img {
+  height: 20px;
+  width: 20px;
+}
+
+.icon:hover {
+  background: #3498db;
+  color: white;
+}
+
+.project-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.85rem;
+}
+
+.btn-edit {
+  background: black;
+  color: white;
+}
+
+.btn-edit:hover {
+  background: grey;
+}
+
+.btn-delete {
+  background: black;
+  color: white;
+}
+
+.btn-delete:hover {
+  background: grey;
+}
+
+/* media queryuntuk projec grid */
+@media (max-width: 768px) {
+  .form-container {
+    padding: 30px 20px;
+    margin: 20px;
+  }
+
+  .date-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .projects-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-card {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-container {
+    padding: 20px 15px;
+    margin: 10px;
+  }
+
+  .form-title {
+    font-size: 24px;
+  }
+
+  .contact-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .project-actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .projects-grid {
+    justify-content: space-around;
+  }
+}
+
+@media (min-width: 1025px) {
+  .projects-grid {
+    justify-content: flex-start;
+  }
+}
