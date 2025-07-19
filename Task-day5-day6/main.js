@@ -74,6 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // MAP: Loop semua project jadi card
     projectsGrid.innerHTML = filteredProjects
       .map((project, idx) => {
+      
         const start = new Date(project.startDate);
         const end = new Date(project.endDate);
         let months =

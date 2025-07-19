@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mini project</title>
+    <link rel="stylesheet" href="assets/src/output.css" />
+</head>
+
+<body class="bg-gray-100">
+    <header class="bg-white text-white">
+        <div class="container mx-auto px-6 h-16 flex items-center justify-between">
+            <nav class="flex space-x-6 items-center">
+                <img src="assets/image/logo.webp" alt="Logo" class="h-15" />
+                <a href="#" class="text-gray-800 hover:text-gray-600 font-medium">Home</a>
+                <a href="#" class="text-gray-800 hover:text-gray-600 font-medium">My Project</a>
+            </nav>
+            <a href="#"
+                class="bg-black text-white px-4 py-2 rounded hover:bg-gray-400 hover:text-white font-semibold transition">Contact
+                Me</a>
+        </div>
+    </header>
+
+
+    <div class="main-content bg-gray-300 min-h-screen py-10">
+        <div class="container mx-auto px-4">
+            <div class="rounded-md p-6 max-w-xl mx-auto">
+                <h1 class="text-2xl font-bold text-center mb-6 text-black">ADD MY PROJECT</h1>
+
+                <form id="projectForm" class="space-y-5">
+                    <!-- Project Name -->
+                    <div class="form-group">
+                        <label for="projectName" class="block font-medium mb-2">Project Name</label>
+                        <input type="text" id="projectName" name="projectName" required
+                            class="w-full border border-white bg-white shadow-xl rounded px-2 py-2 focus:ring-2 focus:ring-gray-500 outline-none" />
+                    </div>
+
+                    <!-- Start & End Dates -->
+                    <div class="flex flex-col md:flex-row gap-4">
+                        <div class="form-group flex-1">
+                            <label for="startDate" class="block font-medium mb-2">Start Date</label>
+                            <input type="date" id="startDate" name="startDate" required
+                                class="w-full border border-white bg-white shadow-xl rounded px-2 py-2 focus:ring-2 focus:ring-gray-500 outline-none" />
+                        </div>
+                        <div class="form-group flex-1">
+                            <label for="endDate" class="block font-medium mb-2">End Date</label>
+                            <input type="date" id="endDate" name="endDate" required
+                                class="w-full border border-white bg-white shadow-xl rounded px-2 py-2 focus:ring-2 focus:ring-gray-500 outline-none" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="description" class="block font-medium mb-2">Description</label>
+                        <textarea id="description" name="description" rows="4" required
+                            placeholder="Describe your project..."
+                            class="w-full border border-white bg-white shadow-xl rounded px-2 py-2 focus:ring-2 focus:ring-gray-500 outline-none resize-none"></textarea>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="technologies-section w-full sm:w-auto ">
+                            <label class="block font-medium mb-2 text-right sm:text-left">Technologies</label>
+
+                            <div class="grid grid-cols-2 gap-6">
+                                <label class="flex items-center gap-2">
+                                    <input type="checkbox" id="nodejs" name="nodejs" value="Node.js">
+                                    Node.js
+                                </label>
+                                <label class="flex items-center gap-2">
+                                    <input type="checkbox" id="nextjs" name="nextjs" value="Next.js">
+                                    Next.js
+                                </label>
+                                <label class="flex items-center gap-2">
+                                    <input type="checkbox" id="reactjs" name="reactjs" value="React.js">
+                                    React.js
+                                </label>
+                                <label class="flex items-center gap-2">
+                                    <input type="checkbox" id="typescript" name="typescript" value="TypeScript">
+                                    TypeScript
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="imageUpload" class="block font-medium mb-2">Upload Image</label>
+                        <input type="file" id="imageUpload" accept="image/*" class="block w-full text-sm bg-white rounded shadow-xl text-gray-500 file:mr-4 file:py-2 file:px-4
+            file:rounded file:border-0
+            file:text-sm file:font-semibold
+            file:bg-gray-800 file:text-white
+            hover:file:bg-gray-400" />
+                    </div>
+
+                    <div class="text-center flex justify-end">
+                        <button type="submit"
+                            class="bg-gray-700 hover:bg-gray-400 text-white font-bold py-2 px-6 rounded transition">
+                            Submit
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <main class="py-10 bg-white min-h-screen">
+        <div class="container mx-auto px-4">
+
+            <div class="mb-8 text-center">
+                <h1 class="text-3xl font-bold text-gray-600">MY PROJECT</h1>
+            </div>
+
+            <div class="projects-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="project-grid">
+                <div class="overflow-hidden flex flex-col shadow-xl">
+                    <div class="h-20 bg-gray-500 flex items-center justify-center rounded-2xl mb-4">
+                        <img src="" alt="gambar" class="object-contain h-16 w-16 rounded-2xl">
+                    </div>
+
+                    <div class="p-4 flex flex-col flex-grow">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-1">Project Title</h3>
+                        <span class="text-sm text-gray-500 mb-2 block">Jan 2025 - Mar 2025</span>
+                        <p class="text-gray-700 flex-grow">
+                            Deskripsi singkat tentang project ini yang menjelaskan apa yang dikerjakan, teknologi, dll.
+                        </p>
+
+
+                        <div class="flex items-center gap-3 mt-4">
+                            <img src="assets/image/playstore.png" alt="Play Store" class="w-6 h-6">
+                            <img src="assets/image/android-logo.png" alt="Android" class="w-6 h-6">
+                            <img src="assets/image/java.png" alt="Java" class="w-6 h-6">
+                        </div>
+
+                        <div class="flex justify-end gap-2 mt-4">
+                            <button
+                                class="bg-yellow-400 text-white px-4 py-1 rounded hover:bg-yellow-500 transition">Edit</button>
+                            <button
+                                class="bg-red-500 text-white px-4 py-1 rounded hover:bg-red-600 transition">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
