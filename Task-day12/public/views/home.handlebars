@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Project</title>
+    <link rel="stylesheet" href="   styles.css" />
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <div class="nav-left">
+                <img src="logo.webp" alt="Logo" class="logo" />
+                <div class="menu-links">
+                    <a href="#" class="link">Home</a>
+                    <a href="#" class="link project">My Project</a>
+                </div>
+            </div>
+            <div class="user-dropdown">
+                {{#if user}}
+                    <span id="user-toggle">{{user.username}}</span>
+                    <div id="dropdown-menu" class="dropdown-content hidden">
+                    <a href="#" class="item-menu">Contact</a> 
+                    <a href="/logout" class="item-menu">Logout</a>
+                    </div>
+                {{else}}
+                    <a href="/login" class="login-link">Login</a>
+                {{/if}}
+            </div>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <div class="container">
+            <div class="form-container">
+                <h1 class="form-title">ADD MY PROJECT</h1>
+
+                <form action="/projects" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="project_name">Project Name</label>
+                        <input type="text" id="project_name" name="project_name" required>
+                    </div>
+
+                    <div class="date-row">
+                        <div class="form-group"> 
+                            <label for="start_date">Start Date</label>
+                            <input type="date" id="start_date" name="start_date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="end_date">End Date</label>
+                            <input type="date" id="end_date" name="end_date" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                    <label for="description">Description</label>
+                     <textarea id="description" name="description" required></textarea>
+                    </div>
+
+                    <div class="technologies-section">
+                        <label>Technologies</label>
+                        <div class="tech-grid">
+                            <div class="tech-item">
+                                <input type="checkbox" name="technologies" value="Node.js">
+                                <label for="nodejs">Node.js</label>
+                            </div>
+                            <div class="tech-item">
+                                <input type="checkbox" name="technologies" value="Next.js">
+                                <label for="nextjs">Next.js</label>
+                            </div>
+                            <div class="tech-item">
+                                    <input type="checkbox" name="technologies" value="React.js">
+                                <label for="reactjs">React.js</label>
+                            </div>
+                            <div class="tech-item">
+                                <input type="checkbox" name="technologies" value="TypeScript">
+                                <label for="typescript">TypeScript</label>
+                            </div>
+                        </div>
+                    </div>
+                      <div class="form-group">
+                        <label for="image">Input gambar</label>
+                        <input type="file" name="image"  multiple accept=".jpg,.jpeg,.png" />
+                      </div>
+                    <button type="submit" class="submit-btn">submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+            <div class="header-card">
+                <h1>MY PROJECT</h1>
+            </div>
+            <div class="projects-grid">
+                {{#each projects}}
+                <a href="/projects/{{id}}" class="project-card-link">
+                    <div class="project-card">
+                        <div class="project-content">
+                            <img src="/uploads/{{image}}" alt="Project Image" class="project-image">
+                                <h3 class="project-title">{{project_name}}</h3>
+
+                                <div class="project-meta">
+                                <span class="project-date">{{duration}}</span>
+                                </div>
+
+                                <p class="project-description">
+                                {{description}}
+                                </p>
+                                <div class="project-icons">
+                                    <div class="icon"><img src="playstore.png" alt=""></div>
+                                    <div class="icon"><img src="android-logo.png" alt=""></div>
+                                    <div class="icon"><img src="java.png" alt=""></div>
+                                </div>
+                            <div class="project-actions">
+                                <form action="/projects/delete/{{id}}" method="POST" onsubmit="return confirm('Yakin ingin hapus?')">
+                                <button class="btn btn-delete">delete</button>
+                                </form> 
+                                <form action="/projects/edit/{{id}}" method="GET">
+                                <button type="submit" class="btn btn-edit">Edit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                {{/each}}
+            </div>
+        </div>
+        
+    </main>
+    <script src="main.js"></script>
+</body>
+
+</html>
+

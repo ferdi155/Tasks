@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Card</title>
+</head>
+<body>
+  <style>
+    img{
+      width: 100%;
+    }
+      .project-detail {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .project-title {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 24px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+  }
+
+  .description, .technologies {
+    margin-top: 20px;
+  }
+
+  .technologies ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+
+  .btn-back {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 8px 16px;
+    background-color: #3f51b5;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.3s;
+  }
+
+  .btn-back:hover {
+    background-color: #303f9f;
+  }
+
+  </style>
+  <div class="project-detail">
+    <img src="/uploads/{{project.image}}" alt="Project Image" class="project-image">
+
+    <h2 class="project-title">{{project.project_name}}</h2>
+
+    <p><strong>Durasi:</strong> {{project.duration}}</p>
+    <p><strong>Tanggal:</strong> {{project.start_date}} - {{project.end_date}}</p>
+
+    <div class="description">
+      <p><strong>Deskripsi:</strong></p>
+      <p>{{project.description}}</p>
+    </div>
+
+    <div class="technologies">
+      <p><strong>Teknologi:</strong></p>
+      <ul>
+        {{#each project.technologies}}
+          <li>{{this}}</li>
+        {{/each}}
+      </ul>
+    </div>
+
+    <a href="/" class="btn-back">⬅ Kembali</a>
+  </div>
+</body>
+</html>
+
+
+
+
